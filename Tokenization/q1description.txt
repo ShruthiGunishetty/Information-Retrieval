@@ -1,0 +1,146 @@
+Language used:java
+
+
+Description of the program:for question 1 : Tokenization
+-------------------------------
+1)The program is taking around 750 milliseconds on an average to generate output.
+
+2)design choices
+--------------------------------
+a)The program converts all uppercase characters into lowercase characters. 
+b)Also all the numbers have been ignored.
+c) All the special characters such as "-","$","." etc are replaced with null.
+d) all the possessives are coverted into plurals.For example consider the word-sheriff's. The ' gets replaced by "" and thus the word becomes sheriffs.
+e) Acronyms: The dot(.) between the the letters is removed. For example, U.S. becomes us
+f)All the data within the SGML tags have been ignored and the attributes within the tags have also been ignored.
+
+3)Major algorithms and datastructures:
+--------------------------------------
+Hash Map:
+ A Hash map is a datastructure that stores key-value pairs . 
+In the program a HashMap is used to store the tokens.
+
+4)How the program works:
+--------------------------
+for each file in the cranfield collection each line is read on by one. In every line,all the data is converted into lower case and data within the tag,digits, special characters are replaced with null. The line is then split into words by splitting it on space and then added to the arraylist.
+Then the arraylist containing tokens for each cranfield file is added to the HashMap.
+
+Adding key value pairs into theHash Map:
+if the key(token) is  already present then the key value is increased by one else the key (token) is added to the map with value "1". 
+
+
+Description for question2 : Stemming
+---------------------------------------
+It uses Stemmer.java - an open source java implementation of porter stemmer algorithm.
+
+It consists of the methods to tokenize the Cranfield data,build a dictionary out of it,call the methods in Stemmer and build a dictionary of the stems as well as calculate unique stem etc.
+
+
+
+
+design choices 
+---------------------------------
+a)The program converts all uppercase characters into lowercase characters. 
+b)Also all the numbers have been ignored.
+c) All the special characters such as "-","$","." etc are replaced with null.
+d) all the possessives are coverted into plurals.For example consider the word-sheriff's. The ' gets replaced by "" and thus the word becomes sheriffs.
+e) Acronyms: The dot(.) between the the letters is removed. For example, U.S. becomes us
+f)All the data within the SGML tags have been ignored and the attributes within the tags have also been ignored.
+
+
+
+
+Main idea
+----------------------------
+For each file in the cranfield collection each line is read on by one. In every line,all the data is converted into lower case and data within the tag,digits, special characters are replaced with null. 
+
+Adding key value pairs into the Hash Map:
+if the key(token) is  already present then the key value is increased by one else the key (token) is added to the map with value "1". 
+
+
+
+
+Major algorithms and datastructures:
+----------------------------------------------------
+a)HashMap
+ A Hashmap is a datastructure that stores key-value pairs . 
+In the program a HashMap is used to store the dictionary of Stems
+
+
+b) stemmer algorithm is used to generate stems from tokens(which is open source available )
+
+
+output:
+---------
+
+Number of Tokens in the Cranfield Text Collection : 216672
+Number of unique tokens in the Cranfield Text Collection : 10040
+Number of Tokens that occur only once in the Cranfield Collection : 4530
+The 30 most frequent word tokens in the Cranfield Collection: 
+the 18813
+of 12344
+and 6174
+a 5730
+in 4472
+to 4142
+is 4008
+for 3341
+are 2369
+with 2187
+on 1887
+flow 1713
+at 1708
+by 1692
+that 1516
+an 1355
+be 1249
+pressure 1100
+as 1075
+from 1074
+this 1051
+which 946
+number 922
+boundary 889
+results 860
+it 818
+mach 768
+theory 762
+layer 723
+method 673
+The average number of word tokens per document : 154
+Number of Stems in the Cranfield Text Collection : 6070
+Number of unique stems in the Cranfield Text Collection : 4112
+Number of stems that occur only once in the Cranfield Collection : 3028
+The 30 most frequent word tokens in the Cranfield Collection: 
+gener 15
+observ 11
+oper 10
+deriv 9
+determin 9
+integr 9
+investig 8
+simul 8
+separ 8
+continu 8
+indic 8
+comput 8
+predict 7
+approxim 7
+acceler 7
+illustr 7
+diffus 7
+stabil 7
+compar 7
+correl 7
+measur 6
+express 6
+develop 6
+examin 6
+revers 6
+design 6
+contribut 6
+engin 6
+depend 6
+estim 6
+The average number of stems per document : 4
+total time taken:714 millisec
